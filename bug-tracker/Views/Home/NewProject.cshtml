@@ -1,0 +1,28 @@
+﻿@model bug_tracker.Program
+
+@{
+    ViewData["Title"] = "Create a New Project";
+}
+
+<h1>New Project</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="NewProject">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="ProjectName">Project Name</label>
+                <input class="form-control" type="text" id="ProjectName" required/>
+            </div>
+            <div class="form-group">
+                <label for="ProjectDescription">Project Description</label>
+                <textarea class="form-control" id="ProjectDescription" rows="3" required></textarea>
+            </div>
+            <input type="submit" value="Create Project" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
