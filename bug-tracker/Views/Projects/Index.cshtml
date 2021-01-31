@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Projects</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create a New Project</a>
 </p>
 <table class="table">
     <thead>
@@ -15,10 +15,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProjectName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectDescription)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -26,9 +22,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ProjectName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectDescription)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

@@ -8,7 +8,7 @@ namespace bug_tracker.Models
 {
     public class Ticket
     {
-        public int Id { get; set; }
+        public int TicketId { get; set; }
 
         [Display(Name = "Ticket Name")]
         [Required(ErrorMessage = "Please enter a name for your ticket")]
@@ -25,6 +25,10 @@ namespace bug_tracker.Models
         [Display(Name = "Start Name")]
         [Required(ErrorMessage = "Please select a start date for your ticket")]
         public string StartDate { get; set; }
+
+        [Display(Name = "Project Name")]
+        [Required(ErrorMessage = "Please select Project for your ticket")]
+        public Project ProjectName { get; set; }
         public string EndDate { get; set; }
 
         public Ticket()

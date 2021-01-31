@@ -161,12 +161,6 @@ C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\ru\Micro
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\Projects.cshtml.g.cs
-C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewProject.cshtml.g.cs
-C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewTicket.cshtml.g.cs
-C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\OpenTicket.cshtml.g.cs
-C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\ClosedTicket.cshtml.g.cs
-C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Home\UnderDevelopmentTicket.cshtml.g.cs
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll

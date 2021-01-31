@@ -23,35 +23,6 @@ namespace bug_tracker.Controllers
             return View();
         }
 
-        public IActionResult NewTicket()
-        {
-            return View();
-        }
-
-        public IActionResult OpenTicket()
-        {
-            return View();
-        }
-        public IActionResult UnderDevelopmentTicket()
-        {
-            return View();
-        }
-        public IActionResult ClosedTicket()
-        {
-            return View();
-        }
-
-
-        public IActionResult Projects()
-        {
-            return View();
-        }
-
-        public IActionResult NewProject()
-        {
-            return View();
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
