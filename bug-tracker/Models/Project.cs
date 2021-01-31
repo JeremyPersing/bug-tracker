@@ -9,7 +9,7 @@ namespace bug_tracker.Models
     public class Project
     {
 
-        public int ProjectId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Project Name")]
         [Required(ErrorMessage = "Please enter a name for your project")]

@@ -8,7 +8,7 @@ namespace bug_tracker.Models
 {
     public class Ticket
     {
-        public int TicketId { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Ticket Name")]
         [Required(ErrorMessage = "Please enter a name for your ticket")]

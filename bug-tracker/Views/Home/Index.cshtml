@@ -1,8 +1,48 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>This is the Home Page</p>
+    <h1 class="display-2">Bug Tracker</h1>
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+    }
+    else
+    {
+        <section>
+            <div class="pt-2">
+                <h1 class="display-4">What is Bug Tracker?</h1>
+                <p>Bug Tracker is an application that can be used track the progress on a project</p>
+            </div>
+            <div class="pt-2">
+                <h1 class="display-4">Why use Bug Tracker</h1>
+                <p>
+                    Bug Tracker promotes efficiency as it allows for users to detail what specific tasks they need
+                    to complete, and then allows them to track their progress throughout those tasks.
+                </p>
+            </div>
+
+            <div>
+                <h1 class="display-4">The Features</h1>
+                <p>
+                    Bug Tracker allows users to create projects and assign tasks to those specific projects.
+                    For those given tasks (Tickets) users can specify the state of each ticket. A ticket can
+                    either be opened, under development, or closed. Open tickets are those that nobody has started on.
+                    A ticket under development is a task that is currently being worked on. Closed tickets are tasks that
+                    have been completed. So now that you know all about Bug Tracker, what are you wainting on? Get started!
+                </p>
+            </div>
+
+            <div class="row">
+                <a class="offset-3 btn btn-primary mr-3" asp-area="Identity" asp-page="/Account/Register">Create an Account</a>
+                <a class=" col-md-3 btn btn-primary ml-3" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </div>
+        </section>
+        
+    }
+
 </div>
+
