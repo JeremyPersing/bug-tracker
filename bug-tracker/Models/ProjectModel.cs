@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bug_tracker.Models
 {
-    public class Project
+    public class ProjectModel
     {
 
         public int Id { get; set; }
@@ -19,7 +19,7 @@ namespace bug_tracker.Models
         [Required(ErrorMessage = "Please enter a description for your project")]
         public string ProjectDescription { get; set; }
 
-        public Project()
+        public ProjectModel()
         {
 
         }

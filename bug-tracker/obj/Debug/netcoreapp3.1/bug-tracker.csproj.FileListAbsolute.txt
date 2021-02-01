@@ -192,3 +192,5 @@ C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Details.cshtml.g.cs
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Edit.cshtml.g.cs
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\Index.cshtml.g.cs
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll

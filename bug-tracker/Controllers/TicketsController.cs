@@ -20,6 +20,7 @@ namespace bug_tracker.Controllers
             _context = context;
         }
 
+        
         // GET: Tickets
         [Authorize]
         public async Task<IActionResult> Index()
@@ -59,7 +60,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TicketName,TicketDescription,TicketStatus")] Ticket ticket)
+        public async Task<IActionResult> Create([Bind("Id,TicketName,TicketDescription,TicketStatus")] TicketModel ticket)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +94,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketName,TicketDescription,TicketStatus")] Ticket ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketName,TicketDescription,TicketStatus")] TicketModel ticket)
         {
             if (id != ticket.Id)
             {

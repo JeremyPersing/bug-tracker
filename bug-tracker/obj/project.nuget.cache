@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "zkAJi2nat51fAKlaQhR4K7j5TD6wkUrTDgdIipDZA5qGrIW4UT++5HMICeINxLIgAXk15sYWNm1yC2cj4KoOpA==",
+  "dgSpecHash": "XRaayGTQb1EZzPsz3uXo6I2FXC17c+3CmojdenU38NqEDUtDkOV/yudKb8KPqvZvZA76/TfU4J6299SIqTM7AQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jeremy\\Desktop\\bug-tracker\\bug-tracker\\bug-tracker.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.11\\microsoft.aspnetcore.authentication.facebook.3.1.11.nupkg.sha512",
+    "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.10\\microsoft.aspnetcore.authentication.google.3.1.10.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.10\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.10.nupkg.sha512",

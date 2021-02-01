@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bug_tracker.Models
 {
-    public class Ticket
+    public class TicketModel
     {
         public int Id { get; set; }
 
@@ -28,10 +28,10 @@ namespace bug_tracker.Models
 
         [Display(Name = "Project Name")]
         [Required(ErrorMessage = "Please select Project for your ticket")]
-        public Project ProjectName { get; set; }
+        public ProjectModel ProjectName { get; set; }
         public string EndDate { get; set; }
 
-        public Ticket()
+        public TicketModel()
         {
 
         }

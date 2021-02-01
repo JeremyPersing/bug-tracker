@@ -20,6 +20,7 @@ namespace bug_tracker.Controllers
             _context = context;
         }
 
+
         // GET: Projects
         [Authorize]
         public async Task<IActionResult> Index()
@@ -59,7 +60,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProjectName,ProjectDescription")] Project project)
+        public async Task<IActionResult> Create([Bind("Id,ProjectName,ProjectDescription")] ProjectModel project)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +94,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ProjectName,ProjectDescription")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProjectName,ProjectDescription")] ProjectModel project)
         {
             if (id != project.Id)
             {

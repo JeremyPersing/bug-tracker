@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace bug_tracker.Models
 {
-    public class MainPageModel
+    public class ProjectWithTicketsModel
     {
-        public Project Project { get; set; }
-        public Ticket Ticket { get; set; }
+        public ProjectModel Project { get; set; }
+        public List<TicketModel> Tickets { get; set; }
     }
 }

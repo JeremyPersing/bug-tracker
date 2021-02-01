@@ -13,7 +13,7 @@ namespace bug_tracker.Data
             : base(options)
         {
         }
-        public DbSet<bug_tracker.Models.Project> Project { get; set; }
-        public DbSet<bug_tracker.Models.Ticket> Ticket { get; set; }
+        public DbSet<bug_tracker.Models.ProjectModel> Project { get; set; }
+        public DbSet<bug_tracker.Models.TicketModel> Ticket { get; set; }
     }
 }
