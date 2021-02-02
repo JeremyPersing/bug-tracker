@@ -60,7 +60,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TicketName,TicketDescription,TicketStatus")] TicketModel ticket)
+        public async Task<IActionResult> Create([Bind("Id,TicketName,TicketDescription,TicketStatus,StartDate,EndDate,ProjectName")] TicketModel ticket)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketName,TicketDescription,TicketStatus")] TicketModel ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketName,TicketDescription,TicketStatus,StartDate,EndDate,ProjectName")] TicketModel ticket)
         {
             if (id != ticket.Id)
             {

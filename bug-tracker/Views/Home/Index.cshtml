@@ -6,8 +6,19 @@
 
 <div class="text-center">
     @if (SignInManager.IsSignedIn(User))
-    {
+    {   
+        <h3>Welcome @User.Identity.Name</h3>
 
+        <div>
+            <h4>Projects</h4>
+        </div>
+
+
+        <div>
+            <h4>Tickets</h4>
+        </div>
+        
+        
     }
     else
     {

@@ -9,5 +9,5 @@ namespace bug_tracker.Models
     {
         public ProjectModel Project { get; set; }
         public List<TicketModel> Tickets { get; set; }
-    }
+}
 }

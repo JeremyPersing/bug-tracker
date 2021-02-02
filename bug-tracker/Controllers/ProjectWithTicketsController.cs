@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using bug_tracker.Data;
+using bug_tracker.Models;
 
 
 namespace bug_tracker.Controllers
@@ -12,6 +13,7 @@ namespace bug_tracker.Controllers
     public class ProjectWithTicketsController : Controller
     {
         private readonly ApplicationDbContext _context;
+
 
         public ProjectWithTicketsController(ApplicationDbContext context)
         {

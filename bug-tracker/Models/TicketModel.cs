@@ -28,7 +28,7 @@ namespace bug_tracker.Models
 
         [Display(Name = "Project Name")]
         [Required(ErrorMessage = "Please select Project for your ticket")]
-        public ProjectModel ProjectName { get; set; }
+        public string ProjectName { get; set; }
         public string EndDate { get; set; }
 
         public TicketModel()
