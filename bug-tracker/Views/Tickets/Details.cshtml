@@ -4,51 +4,50 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>@Model.TicketName Details</h1>
 
 <div>
-    <h4>Ticket</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+        <dt class="col-lg-2">
             @Html.DisplayNameFor(model => model.TicketName)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-lg-10">
             @Html.DisplayFor(model => model.TicketName)
         </dd>
 
-        <dt class="col-sm-2">
+        <dt class="col-lg-2">
             @Html.DisplayNameFor(model => model.TicketDescription)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-lg-10">
             @Html.DisplayFor(model => model.TicketDescription)
         </dd>
 
-        <dt class="col-sm-2">
+        <dt class="col-lg-2">
             @Html.DisplayNameFor(model => model.TicketStatus)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-lg-10">
             @Html.DisplayFor(model => model.TicketStatus)
         </dd>
 
-        <dt class="col-sm-2">
+        <dt class="col-lg-2">
             @Html.DisplayNameFor(model => model.TicketProjectName)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-lg-10">
             @Html.DisplayFor(model => model.TicketProjectName)
         </dd>
 
-        <dt class="col-sm-2">
+        <dt class="col-lg-2">
             @Html.DisplayNameFor(model => model.StartDate)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-lg-10">
             @Html.DisplayFor(model => model.StartDate)
         </dd>
 
-        <dt class="col-sm-2">
+        <dt class="col-lg-2">
             @Html.DisplayNameFor(model => model.EndDate)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-lg-10">
             @Html.DisplayFor(model => model.EndDate)
         </dd>
 

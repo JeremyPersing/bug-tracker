@@ -10,14 +10,14 @@
 <h4>Ticket</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="StartDate" />
             <input type="hidden" asp-for="EndDate" />
             <input type="hidden" asp-for="TicketProjectName" />
-            
+
             <div class="form-group">
                 <label asp-for="TicketName" class="control-label"></label>
                 <input asp-for="TicketName" class="form-control" />
@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="TicketDescription" class="control-label"></label>
-                <input asp-for="TicketDescription" class="form-control" />
+                <textarea asp-for="TicketDescription" class="form-control"></textarea>
                 <span asp-validation-for="TicketDescription" class="text-danger"></span>
             </div>
 
@@ -41,13 +41,24 @@
                     <span asp-validation-for="TicketStatus" class="text-danger"></span>
                 </div>
             }
-            else
+            else if (Model.TicketStatus == "Under Development")
             {
                 <div class="form-group">
                     <label asp-for="TicketStatus" class="control-label"></label>
                     <select asp-for="TicketStatus" class="form-control">
                         <option value="Open">Open</option>
                         <option value="Closed">Closed</option>
+                    </select>
+                    <span asp-validation-for="TicketStatus" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <div class="form-group">
+                    <label asp-for="TicketStatus" class="control-label"></label>
+                    <select asp-for="TicketStatus" class="form-control">
+                        <option value="Open">Open</option>
+                        <option value="Under Development">Under Development</option>
                     </select>
                     <span asp-validation-for="TicketStatus" class="text-danger"></span>
                 </div>
