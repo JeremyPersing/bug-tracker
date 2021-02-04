@@ -14,6 +14,10 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="StartDate" />
+            <input type="hidden" asp-for="EndDate" />
+            <input type="hidden" asp-for="TicketProjectName" />
+            
             <div class="form-group">
                 <label asp-for="TicketName" class="control-label"></label>
                 <input asp-for="TicketName" class="form-control" />
@@ -24,7 +28,8 @@
                 <input asp-for="TicketDescription" class="form-control" />
                 <span asp-validation-for="TicketDescription" class="text-danger"></span>
             </div>
-           
+
+
             @if (Model.TicketStatus == "Open")
             {
                 <div class="form-group">
@@ -47,7 +52,8 @@
                     <span asp-validation-for="TicketStatus" class="text-danger"></span>
                 </div>
             }
-            
+
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
