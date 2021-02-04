@@ -1,4 +1,5 @@
-﻿using bug_tracker.Models;
+﻿using bug_tracker.Data;
+using bug_tracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,6 +13,8 @@ namespace bug_tracker.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        
 
         public HomeController(ILogger<HomeController> logger)
         {

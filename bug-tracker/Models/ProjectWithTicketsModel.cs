@@ -8,6 +8,6 @@ namespace bug_tracker.Models
     public class ProjectWithTicketsModel
     {
         public ProjectModel Project { get; set; }
-        public List<TicketModel> Tickets { get; set; }
+        public TicketModel Tickets { get; set; }
 }
 }

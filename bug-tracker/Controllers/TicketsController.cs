@@ -43,7 +43,7 @@ namespace bug_tracker.Controllers
             {
                 return NotFound();
             }
-
+     
             return View(ticket);
         }
 
@@ -51,6 +51,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         public IActionResult Create()
         {
+            ViewData["TicketProjectName"] = new SelectList(_context.Project,"ProjectName", "ProjectName", "ProjectDescription");
             return View();
         }
 
@@ -60,7 +61,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TicketName,TicketDescription,TicketStatus,StartDate,EndDate,ProjectName")] TicketModel ticket)
+        public async Task<IActionResult> Create([Bind("Id,TicketName,TicketDescription,TicketStatus,StartDate,EndDate,TicketProjectName")] TicketModel ticket)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +69,7 @@ namespace bug_tracker.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["TicketProjectName"] = new SelectList(_context.Project, "ProjectName", "ProjectName", "ProjectDescription", ticket.TicketProjectName);
             return View(ticket);
         }
 
@@ -85,6 +87,7 @@ namespace bug_tracker.Controllers
             {
                 return NotFound();
             }
+      
             return View(ticket);
         }
 
@@ -94,7 +97,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketName,TicketDescription,TicketStatus,StartDate,EndDate,ProjectName")] TicketModel ticket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TicketName,TicketDescription,TicketStatus,StartDate,EndDate,TicketProjectName")] TicketModel ticket)
         {
             if (id != ticket.Id)
             {
@@ -139,7 +142,7 @@ namespace bug_tracker.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["TicketProjectName"] = new SelectList(_context.Project, "Id", "ProjectName", "ProjectDescription", ticket.TicketProjectName);
             return View(ticket);
         }
 
@@ -152,6 +155,7 @@ namespace bug_tracker.Controllers
             var ticket = await _context.Ticket.FindAsync(id);
             _context.Ticket.Remove(ticket);
             await _context.SaveChangesAsync();
+            ViewData["TicketProjectName"] = new SelectList(_context.Project, "Id", "ProjectName", "ProjectDescription", ticket.TicketProjectName);
             return RedirectToAction(nameof(Index));
         }
 

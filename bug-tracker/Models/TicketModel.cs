@@ -22,13 +22,13 @@ namespace bug_tracker.Models
         [Required(ErrorMessage = "Please select a status for your ticket")]
         public string TicketStatus { get; set; }
 
-        [Display(Name = "Start Name")]
+        [Display(Name = "Start Date")]
         [Required(ErrorMessage = "Please select a start date for your ticket")]
         public string StartDate { get; set; }
 
         [Display(Name = "Project Name")]
         [Required(ErrorMessage = "Please select Project for your ticket")]
-        public string ProjectName { get; set; }
+        public string TicketProjectName { get; set; }
         public string EndDate { get; set; }
 
         public TicketModel()

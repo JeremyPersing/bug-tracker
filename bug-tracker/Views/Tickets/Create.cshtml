@@ -14,11 +14,10 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ProjectName" class="control-label"></label>
-                <select asp-for="ProjectName" class="form-control">
-                    <option value="Bug Tracker">Bug Tracker</option>
+                <label asp-for="TicketProjectName" class="control-label"></label>
+                <select asp-for="TicketProjectName" class="form-control" asp-items="@ViewBag.TicketProjectName">
                 </select>
-                <span asp-validation-for="ProjectName" class="text-danger"></span>
+                <span asp-validation-for="TicketProjectName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TicketName" class="control-label"></label>
@@ -33,8 +32,8 @@
             <div class="form-group">
                 <label asp-for="TicketStatus" class="control-label"></label>
                 <select asp-for="TicketStatus" class="form-control">
-                    <option>Open</option>
-                    <option>Under Development</option>
+                    <option value="Open">Open</option>
+                    <option value="Under Development">Under Development</option>
                 </select>
                 <span asp-validation-for="TicketStatus" class="text-danger"></span>
             </div>
