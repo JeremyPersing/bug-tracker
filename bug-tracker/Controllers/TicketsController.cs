@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using bug_tracker.Data;
 using bug_tracker.Models;
 using Microsoft.AspNetCore.Authorization;
+using PagedList;
 
 namespace bug_tracker.Controllers
 {
@@ -23,8 +24,9 @@ namespace bug_tracker.Controllers
         
         // GET: Tickets
         [Authorize]
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.StatusSortParm = sortOrder == "Status" ? "status_desc" : "Status";
             var tickets = from t in _context.Ticket select t;
@@ -44,7 +46,11 @@ namespace bug_tracker.Controllers
                     tickets = tickets.OrderBy(t => t.TicketProjectName);
                     break;
             }
-            return View(tickets.ToList());
+
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+
+            return View(tickets.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Tickets/Details/5

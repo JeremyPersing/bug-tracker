@@ -1,4 +1,6 @@
-﻿@model IEnumerable<bug_tracker.Models.TicketModel>
+﻿@model PagedList.IPagedList<bug_tracker.Models.TicketModel>
+@using PagedList.Mvc;
+<link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewData["Title"] = "Index";
@@ -14,36 +16,41 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TicketName)
+                Ticket Name
             </th>
             <th>
                 @Html.ActionLink("Project Name", "Index", new { sortOrder = ViewBag.NameSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
             <th>
-                @Html.ActionLink("Ticket Status", "Index", new { sortOrder = ViewBag.StatusSortParm }, new { @class = "dropdown-toggle caret dropdown-link" }) 
+                @Html.ActionLink("Ticket Status", "Index", new { sortOrder = ViewBag.StatusSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketProjectName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TicketStatus)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketStatus)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort }))
