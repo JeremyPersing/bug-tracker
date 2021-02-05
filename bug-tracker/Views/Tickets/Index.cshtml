@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
+
 <h1>Current Tickets</h1>
 
 <p>
@@ -16,10 +17,10 @@
                 @Html.DisplayNameFor(model => model.TicketName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TicketProjectName)
+                @Html.ActionLink("Project Name", "Index", new { sortOrder = ViewBag.NameSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TicketStatus)
+                @Html.ActionLink("Ticket Status", "Index", new { sortOrder = ViewBag.StatusSortParm }, new { @class = "dropdown-toggle caret dropdown-link" }) 
             </th>
             <th></th>
         </tr>
@@ -45,3 +46,4 @@
 }
     </tbody>
 </table>
+

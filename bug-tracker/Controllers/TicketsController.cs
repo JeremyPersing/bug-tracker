@@ -23,9 +23,28 @@ namespace bug_tracker.Controllers
         
         // GET: Tickets
         [Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Ticket.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.StatusSortParm = sortOrder == "Status" ? "status_desc" : "Status";
+            var tickets = from t in _context.Ticket select t;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    tickets = tickets.OrderByDescending(t => t.TicketProjectName);
+                    break;
+                case "Status":
+                    tickets = tickets.OrderBy(t => t.TicketStatus);
+                    break;
+                case "status_desc":
+                    tickets = tickets.OrderByDescending(t => t.TicketStatus);
+                    break;
+                default:
+                    tickets = tickets.OrderBy(t => t.TicketProjectName);
+                    break;
+            }
+            return View(tickets.ToList());
         }
 
         // GET: Tickets/Details/5

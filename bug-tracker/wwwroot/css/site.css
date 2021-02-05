@@ -7,6 +7,20 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+/* Personal Additions */
+.caret.caret-up {
+    border-top-width: 0;
+    border-bottom: 4px solid #fff;
+}
+
+.dropdown-link {
+    color: black;
+}
+
+.dropdown-link:hover {
+    color: black;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
