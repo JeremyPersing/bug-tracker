@@ -23,9 +23,26 @@ namespace bug_tracker.Controllers
 
         // GET: Projects
         [Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Project.ToListAsync());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var projects = from p in _context.Project select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                projects = projects.Where(p => p.ProjectName.Contains(searchString));
+            }
+
+            if (sortOrder == "name_desc")
+            {
+                projects = projects.OrderByDescending(p => p.ProjectName);
+            }
+            else
+            {
+                projects = projects.OrderBy(p => p.ProjectName);
+            }
+
+            return View(projects.ToList());
         }
 
         // GET: Projects/Details/5

@@ -9,11 +9,18 @@
 <p>
     <a asp-action="Create">Create a New Project</a>
 </p>
+@using (Html.BeginForm())
+{
+<p>
+    Find by Project Name: @Html.TextBox("SearchString")
+    <input type="submit" value="Search" />
+</p>
+}
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectName)
+                @Html.ActionLink("Project Name", "Index", new { sortOrder = ViewBag.NameSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
         </tr>
     </thead>
