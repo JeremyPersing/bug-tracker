@@ -24,12 +24,31 @@ namespace bug_tracker.Controllers
         
         // GET: Tickets
         [Authorize]
-        public async Task<IActionResult> Index(string sortOrder, int? page)
+        public ViewResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.StatusSortParm = sortOrder == "Status" ? "status_desc" : "Status";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewBag.CurrentFilter = searchString;
+
             var tickets = from t in _context.Ticket select t;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                tickets = tickets.Where(t => t.TicketName.Contains(searchString)
+                                        || t.TicketProjectName.Contains(searchString)
+                                        || t.TicketDescription.Contains(searchString));
+            }
 
             switch (sortOrder)
             {
@@ -42,12 +61,18 @@ namespace bug_tracker.Controllers
                 case "status_desc":
                     tickets = tickets.OrderByDescending(t => t.TicketStatus);
                     break;
+                case "Date":
+                    tickets = tickets.OrderBy(t => t.StartDate);
+                    break;
+                case "date_desc":
+                    tickets = tickets.OrderByDescending(t => t.StartDate);
+                    break;
                 default:
                     tickets = tickets.OrderBy(t => t.TicketProjectName);
                     break;
             }
 
-            int pageSize = 3;
+            int pageSize = 4;
             int pageNumber = (page ?? 1);
 
             return View(tickets.ToPagedList(pageNumber, pageSize));
