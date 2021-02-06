@@ -1,7 +1,6 @@
-﻿@using PagedList.Mvc;
+﻿
+@model PaginatedList<bug_tracker.Models.TicketModel>
 
-@model PagedList.IPagedList<bug_tracker.Models.TicketModel>
-<link href="/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewData["Title"] = "Index";
@@ -13,24 +12,37 @@
 @using (Html.BeginForm())
 {
     <p>
-        Find By Name or Description : @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        Find By Name or Description : @Html.TextBox("SearchString", ViewBag.CurrentFiilter as string)
+        <input class="btn btn-secondary" type="submit" value="Search" /> | 
+        <a asp-action="Index">Back to Full List</a>
     </p>
 }
-<table class="table">
+<table class="table" id="tableId">
     <thead>
         <tr>
             <th>
                 Ticket Name
             </th>
             <th>
-                @Html.ActionLink("Project Name", "Index", new { sortOrder = ViewBag.NameSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
+                @Html.ActionLink("Project Name", "Index", new
+                {
+                    sortOrder = ViewBag.NameSortParm,
+               currentFilter = ViewBag.CurrentFilter
+                }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
             <th>
-                @Html.ActionLink("Ticket Status", "Index", new { sortOrder = ViewBag.StatusSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
+                @Html.ActionLink("Ticket Status", "Index", new
+                {
+                    sortOrder = ViewBag.StatusSortParm,
+               currentFilter = ViewBag.CurrentFilter
+                }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
             <th>
-                @Html.ActionLink("Start Date", "Index", new { sortOrder = ViewBag.DateSortParm }, new { @class = "dropdown-toggle caret dropdown-link" })
+                @Html.ActionLink("Start Date", "Index", new
+                {
+                    sortOrder = ViewBag.DateSortParm,
+               currentFilter = ViewBag.CurrentFilter
+                }, new { @class = "dropdown-toggle caret dropdown-link" })
             </th>
             <th></th>
         </tr>
@@ -60,6 +72,22 @@
         }
     </tbody>
 </table>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
 
-<br />
-<span class="text-center">Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount</span>
+<a asp-action="Index" 
+   asp-route-sortOrder="@ViewBag.CurrentSort" 
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewBag.CurrentFilter"
+   class="btn btn-outline-secondary @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewBag.CurrentSort"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewBag.CurrentFilter"
+   class="btn btn-outline-secondary @nextDisabled">
+    Next
+</a>

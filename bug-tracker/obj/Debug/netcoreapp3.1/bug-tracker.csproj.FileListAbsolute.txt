@@ -203,3 +203,8 @@ C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\System.W
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\PagedList.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\PagedList.Mvc.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll

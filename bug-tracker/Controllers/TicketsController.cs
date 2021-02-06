@@ -21,10 +21,14 @@ namespace bug_tracker.Controllers
             _context = context;
         }
 
-        
+
         // GET: Tickets
         [Authorize]
-        public ViewResult Index(string sortOrder, string searchString, string currentFilter, int? page)
+        public async Task<ViewResult> Index(
+            string sortOrder,
+            string searchString,
+            string currentFilter,
+            int? pageNumber)
         {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -33,12 +37,13 @@ namespace bug_tracker.Controllers
 
             if (searchString != null)
             {
-                page = 1;
+                pageNumber = 1;
             }
             else
             {
                 searchString = currentFilter;
             }
+
             ViewBag.CurrentFilter = searchString;
 
             var tickets = from t in _context.Ticket select t;
@@ -72,10 +77,9 @@ namespace bug_tracker.Controllers
                     break;
             }
 
-            int pageSize = 4;
-            int pageNumber = (page ?? 1);
+            int pageSize = 10;
 
-            return View(tickets.ToPagedList(pageNumber, pageSize));
+            return View(await PaginatedList<TicketModel>.CreateAsync(tickets.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Tickets/Details/5
@@ -93,7 +97,7 @@ namespace bug_tracker.Controllers
             {
                 return NotFound();
             }
-     
+
             return View(ticket);
         }
 
@@ -101,7 +105,7 @@ namespace bug_tracker.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            ViewData["TicketProjectName"] = new SelectList(_context.Project,"ProjectName", "ProjectName", "ProjectDescription");
+            ViewData["TicketProjectName"] = new SelectList(_context.Project, "ProjectName", "ProjectName", "ProjectDescription");
             return View();
         }
 
@@ -137,7 +141,7 @@ namespace bug_tracker.Controllers
             {
                 return NotFound();
             }
-      
+
             return View(ticket);
         }
 

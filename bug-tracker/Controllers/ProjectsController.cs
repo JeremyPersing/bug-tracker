@@ -42,7 +42,7 @@ namespace bug_tracker.Controllers
                 projects = projects.OrderBy(p => p.ProjectName);
             }
 
-            return View(projects.ToList());
+            return View(await projects.AsNoTracking().ToListAsync());
         }
 
         // GET: Projects/Details/5
@@ -177,4 +177,5 @@ namespace bug_tracker.Controllers
             return _context.Project.Any(e => e.Id == id);
         }
     }
+
 }
