@@ -77,7 +77,7 @@ namespace bug_tracker.Controllers
                     break;
             }
 
-            int pageSize = 10;
+            int pageSize = 5;
 
             return View(await PaginatedList<TicketModel>.CreateAsync(tickets.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
