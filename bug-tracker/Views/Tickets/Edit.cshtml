@@ -2,7 +2,7 @@
 
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit Ticket";
 }
 
 <h3>Edit Ticket</h3>
@@ -70,8 +70,6 @@
                 </select>
                 <span asp-validation-for="TicketStatus" class="text-danger"></span>
             </div>
-
-
 
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" onclick="checkClosed()"/>
