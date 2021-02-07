@@ -7,14 +7,48 @@
 
 <h3>Edit Ticket</h3>
 <hr />
+
+<script>
+    function checkClosed() {
+        if (document.getElementById("ticketStatus").value === "Closed") {
+            let date = new Date();
+            let year = date.getFullYear();
+            // Month return an integer between 0-11 so add 1 to it then stringify and 
+            let month = date.getMonth() + 1;
+            if (month < 10) {
+                month = toTwoSpaces(month.toString());
+            }
+            else {
+                month.toString();
+            }
+            // getDate will return an integer but if it's not double digit it will be single digit
+            let day = date.getDate();
+            if (day < 10) {
+                day = toTwoSpaces(day.toString());
+            }
+            else {
+                day.toString();
+            }
+
+            let dateString = year + "-" + month + "-" + day;
+            document.getElementById("endDate").value = dateString;
+        }
+    }
+
+    function toTwoSpaces(str) {
+        str = 0 + str;
+        return str;
+    }
+</script>
+
 <div class="row">
     <div class="col-md-8">
-        <form asp-action="Edit">
+        <form asp-action="Edit" name="ticketEditForm" onsubmit="">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="StartDate" />
-            <input type="hidden" asp-for="EndDate" />
             <input type="hidden" asp-for="TicketProjectName" />
+            <input id="endDate" type="hidden" asp-for="EndDate" value="122"/>
 
             <div class="form-group">
                 <label asp-for="TicketName" class="control-label"></label>
@@ -29,7 +63,7 @@
 
             <div class="form-group">
                 <label asp-for="TicketStatus" class="control-label"></label>
-                <select asp-for="TicketStatus" class="form-control">
+                <select id="ticketStatus" asp-for="TicketStatus" class="form-control">
                     <option value="Open">Open</option>
                     <option value="Under Development">Under Development</option>
                     <option value="Closed">Closed</option>
@@ -37,13 +71,16 @@
                 <span asp-validation-for="TicketStatus" class="text-danger"></span>
             </div>
 
+
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" onclick="checkClosed()"/>
                 <button class="btn btn-secondary" asp-action="Index">Cancel</button>
             </div>
         </form>
     </div>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
