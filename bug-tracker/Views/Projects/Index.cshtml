@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        Find by Project Name: @Html.TextBox("SearchString")
+        Find by Project Name @Html.TextBox("SearchString")
         <input class="btn btn-secondary" type="submit" value="Search" /> |
         <a asp-action="Index">Back to Full List</a>
     </p>

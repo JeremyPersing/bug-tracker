@@ -12,7 +12,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        Find By Name or Description : @Html.TextBox("SearchString", ViewBag.CurrentFiilter as string)
+        Find By Name or Description @Html.TextBox("SearchString", ViewBag.CurrentFiilter as string)
         <input class="btn btn-secondary" type="submit" value="Search" /> | 
         <a asp-action="Index">Back to Full List</a>
     </p>
