@@ -17,61 +17,64 @@
         <a asp-action="Index">Back to Full List</a>
     </p>
 }
-<table class="table" id="tableId">
-    <thead>
-        <tr>
-            <th>
-                Ticket Name
-            </th>
-            <th>
-                @Html.ActionLink("Project Name", "Index", new
-                {
-                    sortOrder = ViewBag.NameSortParm,
-               currentFilter = ViewBag.CurrentFilter
-                }, new { @class = "dropdown-toggle caret dropdown-link" })
-            </th>
-            <th>
-                @Html.ActionLink("Ticket Status", "Index", new
-                {
-                    sortOrder = ViewBag.StatusSortParm,
-               currentFilter = ViewBag.CurrentFilter
-                }, new { @class = "dropdown-toggle caret dropdown-link" })
-            </th>
-            <th>
-                @Html.ActionLink("Start Date", "Index", new
-                {
-                    sortOrder = ViewBag.DateSortParm,
-               currentFilter = ViewBag.CurrentFilter
-                }, new { @class = "dropdown-toggle caret dropdown-link" })
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-responsive">
+    <table class="table" id="tableId">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TicketName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TicketProjectName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TicketStatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                <th>
+                    Ticket Name
+                </th>
+                <th>
+                    @Html.ActionLink("Project Name", "Index", new
+                    {
+                        sortOrder = ViewBag.NameSortParm,
+                   currentFilter = ViewBag.CurrentFilter
+                    }, new { @class = "dropdown-toggle caret dropdown-link" })
+                </th>
+                <th>
+                    @Html.ActionLink("Ticket Status", "Index", new
+                    {
+                        sortOrder = ViewBag.StatusSortParm,
+                   currentFilter = ViewBag.CurrentFilter
+                    }, new { @class = "dropdown-toggle caret dropdown-link" })
+                </th>
+                <th>
+                    @Html.ActionLink("Start Date", "Index", new
+                    {
+                        sortOrder = ViewBag.DateSortParm,
+                   currentFilter = ViewBag.CurrentFilter
+                    }, new { @class = "dropdown-toggle caret dropdown-link" })
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TicketName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TicketProjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TicketStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
