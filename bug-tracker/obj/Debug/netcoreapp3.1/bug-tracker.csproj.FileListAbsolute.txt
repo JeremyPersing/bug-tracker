@@ -208,3 +208,4 @@ C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\Newtonso
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\X.PagedList.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\bin\Debug\netcoreapp3.1\X.PagedList.Web.Common.dll
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Administration\CreateRole.cshtml.g.cs
