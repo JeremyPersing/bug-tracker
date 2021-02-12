@@ -9,7 +9,7 @@ namespace bug_tracker.Models
     public class CreateRoleModel
     {
         [Required]
-        [Display(Name = "Roll")];
+        [Display(Name = "Roll")]
         public string RoleName { get; set; }
     }
 }
