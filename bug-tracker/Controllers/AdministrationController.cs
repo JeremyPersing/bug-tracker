@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace bug_tracker.Controllers
 {
@@ -16,13 +16,15 @@ namespace bug_tracker.Controllers
         {
             this.roleManager = roleManager;
         }
-
+        
+        [Authorize(Policy = "readpolicy")]
         public IActionResult Index()
         {
             var roles = roleManager.Roles.ToList();
             return View(roles);
         }
 
+        [Authorize(Policy = "writepolicy")]
         public IActionResult Create()
         {
             return View(new IdentityRole());
