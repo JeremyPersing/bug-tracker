@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qLO1YWW3afK3oz+ZPszO3U9zGsFpgXZBSYF71wVVxBTDZyeyfDIoEujT61CKJcVQdwsoLdDOcdLl+ftFHTDSvg==",
+  "dgSpecHash": "6sa/72hL6MhlPZSjTB6vtF8sbqS7JvdiO9cOHvua+jTrXe5sNcOvd9fL3nFg14smBCODlbhawlMZZQsBjclh/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jeremy\\Desktop\\bug-tracker\\bug-tracker\\bug-tracker.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
-    "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.11\\microsoft.aspnetcore.authentication.facebook.3.1.11.nupkg.sha512",
+    "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.8\\microsoft.aspnetcore.authentication.facebook.3.1.8.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.10\\microsoft.aspnetcore.authentication.google.3.1.10.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\Jeremy\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",

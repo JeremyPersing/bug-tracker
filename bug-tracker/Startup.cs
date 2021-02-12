@@ -32,6 +32,8 @@ namespace bug_tracker
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser, IdentityRole>
                 (options => options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultTokenProviders()
+                .AddDefaultUI()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddAuthentication()
@@ -39,6 +41,11 @@ namespace bug_tracker
                     {
                         options.ClientId = Configuration["App:GoogleClientId"];
                         options.ClientSecret = Configuration["App:GoogleClientSecret"];
+                    })
+                    .AddFacebook(options =>
+                    {
+                        options.ClientId = Configuration["App:FacebookClientId"];
+                        options.ClientSecret = Configuration["App:FacebookClientSecret"];
                     });
                     
 
