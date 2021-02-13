@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\Views\_ViewImports.cshtml"
+#line 2 "C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\Views\_ViewImports.cshtml"
 using bug_tracker;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\Views\_ViewImports.cshtml"
 using bug_tracker.Models;
 
 #line default
@@ -34,7 +34,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"47eea196f9a58d089aceac46bfd8bc0eb660fc9d", @"/Views/Shared/_LoginPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3c2c432be8b8afd9ac1aea00304a1154305cb565", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9646ec7d365a352893adcb94080a65109f07f251", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__LoginPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("nav-link"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

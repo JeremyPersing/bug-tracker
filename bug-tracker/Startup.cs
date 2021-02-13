@@ -34,6 +34,7 @@ namespace bug_tracker
                 (options => options.SignIn.RequireConfirmedAccount = false)
                 .AddDefaultTokenProviders()
                 .AddDefaultUI()
+                .AddSignInManager()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddAuthentication()
@@ -52,11 +53,10 @@ namespace bug_tracker
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddAuthorization(options =>
-            {
+            services.AddAuthorization(options => {
                 options.AddPolicy("readpolicy",
                     builder => builder.RequireRole("Admin", "Manager", "User"));
-                options.AddPolicy("writePolicy",
+                options.AddPolicy("writepolicy",
                     builder => builder.RequireRole("Admin", "Manager"));
             });
         }

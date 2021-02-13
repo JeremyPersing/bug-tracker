@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace bug_tracker.Models
 {
-    public class CreateRoleModel
+    public class RoleModification
     {
         [Required]
-        [Display(Name = "Roll")]
         public string RoleName { get; set; }
+        public string RoleId { get; set; }
+        public string[] AddIds { get; set; }
+        public string[] DeleteIds { get; set; }
     }
 }
