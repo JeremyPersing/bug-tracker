@@ -79,6 +79,29 @@ namespace bug_tracker.Controllers
             return View(user);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            IdentityUser user = await userManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                IdentityResult result = await userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    Errors(result);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "User Not Found");
+            }
+            return View("Index", userManager.Users);
+        }
+
         private void Errors(IdentityResult result)
         {
             foreach(IdentityError error in result.Errors)
