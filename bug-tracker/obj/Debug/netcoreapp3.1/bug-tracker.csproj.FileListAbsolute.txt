@@ -250,3 +250,4 @@ C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Role\Index.cshtml.g.cs
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Role\Update.cshtml.g.cs
 C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\Jeremy\Desktop\bug-tracker\bug-tracker\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Update.cshtml.g.cs
